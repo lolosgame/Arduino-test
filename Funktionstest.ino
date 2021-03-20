@@ -1,7 +1,8 @@
 void setup() {
-  // put your setup code here, to run once:
+  // Der Starttext:
   Serial.begin(9600);
   pinMode(4, INPUT);
+  pinMode(5, OUTPUT);
   Serial.println("###########");
   Serial.println("# Arduino #");
   Serial.println("# tester  #");
@@ -11,16 +12,19 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  //Die loop die den Knopf checkt.
+  digitalWrite(5, HIGH);
   delay(1000);
   if(digitalRead(4) == HIGH) {
-    Serial.println("Status: An");
+    Serial.println("Button: An");
+    Serial.println("Der Knopf funktioniert;")
+  digitalWrite(5, LOW);
    
   }
 
 
   else{
-    Serial.println("Status: Aus");
+    Serial.println("Button: Aus");
 
     
   }
